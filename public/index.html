@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta charset="utf-8" />    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
+    <title>Digital Resume | Kerry Kitchen</title>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript">
+      function checkTop() {
+        if (window.scrollY === 0) {
+          document.getElementById('btt').style.opacity = "0";
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+          // document.getElementById('nav').style.opacity = "0";
+          // document.getElementById('nav').style.min-height = "0";
+
+        } else {
+          document.getElementById('btt').style.opacity = "1";
+
+          // document.getElementById('nav').style.opacity = "1";
+        }
+      }
+    </script>
+    <style type="text/css">
+      #btt {
+        transition: opacity 0.6s ease;
+      }
+    </style>
   </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <body class="flex flex-col min-h-screen" onscroll="checkTop()">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <nav id="nav" class="sticky top-0 min-h-[7vh] px-4 bg-gray-300 flex items-center justify-between">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      <a href="#footer">Footer</a>
+      <div>
+        <a href="#block-1">Block 1</a>
+        <a href="#block-2">Block 2</a>
+        <!-- <a href="#block-3">Block 3</a> -->
+        <!-- <a href="#block-4">Block 4</a>         -->
+      </div>
+
+    </nav>
+
+    <main class="flex-1 bg-gray-100">
+
+      <!-- JS disabled notification -->
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+
+      <!-- -->
+      <!--  -->
+
+      <div id="block-1" class="min-h-screen bg-red-100">
+        <div id="root"></div>
+      </div>
+
+      <div id="block-2" class="min-h-[80vh] bg-blue-100">Block 2</div>
+      <!-- <div id="block-3" class="min-h-[80vh] bg-red-100">Block 3</div> -->
+      <!-- <div id="block-4" class="min-h-[80vh] bg-blue-100">Block 4</div> -->
+    
+      <!-- -->  
+      <a id="btt" href="#nav" class="fixed bottom-10 right-10 opacity-0">Back to top</a>
+    
+    </main>
+
+    <footer id="footer" class="h-24 bg-gray-300 flex items-center justify-center">
+      <p>Copyright © Kerry Kitchen 2023</p>
+    </footer>
+
   </body>
 </html>
